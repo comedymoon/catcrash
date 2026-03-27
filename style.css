@@ -26,7 +26,6 @@ body, html {
     pointer-events: none;
     display: flex;
     flex-wrap: wrap;
-    /* Adjusted gap for slightly more breathing room */
     gap: 80px 130px;
     padding: 50px;
     transform: rotate(-25deg);
@@ -79,4 +78,23 @@ body, html {
 
 #timer {
     color: #ff0000;
+}
+
+.github-link {
+    position: fixed; bottom: 20px; left: 20px;
+    display: inline-block;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.github-link:hover {
+    opacity: 1;
+}
+
+.github-icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
 }

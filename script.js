@@ -1,7 +1,7 @@
 (function() {
     window.onload = function() {
         const timerDisplay = document.getElementById('timer');
-        let timeLeft = 2;
+        let timeLeft = 5;
 
         const isApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
