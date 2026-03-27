@@ -1,2 +1,2 @@
-# catcrash
-expensive computer go boom boom
+just dont run this, at all
+![cat](cat.png)
