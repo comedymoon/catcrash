@@ -1,0 +1,26 @@
+name: deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: ssh
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: known hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: sync files
+        run: |
+          rsync -avz --delete \
+          -e "ssh -p ${{ secrets.SSH_PORT }}" \
+          ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/crash.comedymoon.lol/
